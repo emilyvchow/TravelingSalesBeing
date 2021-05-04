@@ -1,0 +1,48 @@
+city SanFrancisco
+city LosAngeles
+flight SanFrancisco LosAngeles
+
+city Dallas
+city Miami
+flight Dallas Miami
+
+city Chicago
+city Denver
+flight Chicago Denver
+
+city Phoenix
+city Champaign
+flight Pheonix Champaign
+
+city Houston
+city Cancun
+flight Houston Cancun
+
+city WashingtonDC
+city NewOrleans
+flight WashingtonDC NewOrleans
+
+city Honolulu
+city Oakland
+flight Honolulu Oakland
+
+city Oakland
+city Anchorage
+flight Oakland Anchorage
+
+city Honolulu
+city LosAngeles
+flight Honolulu LosAngeles
+
+city Tuscon
+city Orlando
+flight Tuscon Orlando
+
+flight SanFrancisco Miami
+flight Dallas LosAngeles
+flight Pheonix Chicago
+flight WashingtonDC Orlando
+flight Anchorage Houston
+flight Honolulu Oakland
+flight Orlando Chicago
+flight Denver Houston
