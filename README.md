@@ -1,4 +1,4 @@
-# TravelingSalesBeing
+# Traveling Sales Being
 
 Name: Emily Chow
 
