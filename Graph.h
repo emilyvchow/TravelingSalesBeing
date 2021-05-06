@@ -9,22 +9,18 @@ class Graph
 {
 public:
   Graph() {
-    Node* n1 = new Node("San Francisco");
-    Node* n2 = new Node("Los Angeles");
-    double price = 85.00;
-
-    Edge* e1 = new Edge(n1, n2, price);
-
-    graphNodes.push_back(n1);
-    graphNodes.push_back(n2);
-    graphEdges.push_back(e1);
+    // default constructor
   }
 
-  void readIn(const std::string& inputLocation, std::vector<std::string>& data);
+  void readIn();
 
-  bool find(std::string selectedCity);
+  std::vector<Node*> getGraphNodes() { return graphNodes; }
+
+  Node* find(const std::string& selectedCity);
 
   void report();
+
+  Edge* lowestPrice();
 
 private:
   std::vector<Node*> graphNodes;

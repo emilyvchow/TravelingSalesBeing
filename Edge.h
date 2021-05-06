@@ -10,9 +10,20 @@ public:
     connection1 = c1;
     connection2 = c2;
     cost = price;
+    isMarked = false;
   }
 
+  Node* getConnection1() { return connection1; }
+
+  Node* getConnection2() { return connection2; }
+
+  double getCost() { return cost; }
+
+  bool getIsMarked() { return isMarked; }
+
   void report();
+
+  Node* otherEnd(Node* end1);
 
 private:
   // node that connects - node pointer because edge is pointing to real node
@@ -23,8 +34,12 @@ private:
   // how much a flight costs
   double cost;
 
+  std::vector<Edge*> edges;
+
+  // marked edges
+  bool isMarked;
+
   // check both directions
 
   // how long a flight takes
-
 };

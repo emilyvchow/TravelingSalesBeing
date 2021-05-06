@@ -6,32 +6,139 @@
 void report();
 
 /*
-Due Date: Tuesday, May 4 @ 10AM
-Construct graph from file. Have graph constructor read data file and build it. 
-
-TODO: 
-Put in a few more cities (8)
-Put in a bunch of flights
-Get more data in so we have something to work with, so we can create extra algorithms
 - Cheapest flight to somewhere
 - Cheapest flight with fewest number of hops
 
-Eight cities might need a couple dozen flights if you want to make a bunch of connections
-
-TODO: 
-Data.txt (Can also hardcode Data.txt)
-Open file and readin
 If you see first line is a city, you know next string is a cityname and make city for it (one string and nake Node for city)
 
 If first line is a flight, you know there will be two strings and both are node names. Find nodes in graphNodes list
-
-Not too easy to add this and make a graph
-Might have to write find function (here is name, go through whole list of nodes, see if you can find node that goes with this name) -> not conceptually hard but does take code
 */
-
+enum Menu {
+  LISTOFCITIES = 1,
+  CITYCONNECTIONS = 2,
+  CHEAPESTFLIGHT = 3,
+  CITYGRAPH = 4,
+  QUIT = 5
+};
 
 int main() {
   Graph* newGraph = new Graph();
+  newGraph-> readIn();
   newGraph-> report();
-};
 
+  std::string userCity;
+
+  std::cout << "Welcome to the Traveling Sales Being problem!" << std::endl;
+
+  std::cout << "1 = List of Cities\n2 = City Connections\n3 = Cheapest Flight\n4 = City Graph\n5 = At Least 3 Flights\n 6 = Quit\nEnter your choice: " << std::endl;
+
+  int choice = -1;
+
+  // menu options
+
+  while (choice != 0) {
+    // ask user to input choice
+    std::cin >> choice;
+
+    // list of city
+    if (choice == 1) {
+      // list cities
+      for (Node* eachCity : newGraph-> getGraphNodes()) {
+        std::cout << "City: " << eachCity-> getName() << std::endl;
+      }
+    }
+
+    // city connections
+    else if (choice == 2) {
+      // prompt user for city name and see all places you can get to from that city
+      std::cout << "Enter city name: " << std::endl;
+      std::cin >> userCity;
+
+      Node* cityNode = newGraph-> find(userCity);
+      cityNode-> report();
+    }
+    
+    // cheapest flight
+    else if (choice == 3) {
+      Edge* flight = newGraph-> lowestPrice();
+
+      // cheapest flight
+      // keep track of lowest cost one as you go through
+      std::cout << "The lowest price flight is: " << std::endl;
+      flight-> report();
+    }
+
+    // Connectivity (see how everything is connected): list all cities can get to from chicago, start marking process
+    else if (choice == 4) {
+      for (Node* newNode : newGraph-> getGraphNodes()) {
+        newNode-> setIsMarked(false);
+      }
+
+      std::cout << "Enter city name: " << std::endl;
+      std::cin >> userCity;
+
+      // find city , then call recursive function
+      Node* cityNode = newGraph-> find(userCity);
+      cityNode-> connectionMap();
+
+      for (Node* newNode : newGraph-> getGraphNodes()) {
+        if (newNode-> getIsMarked()) {
+          newNode-> report();
+  
+        }
+      }
+    }
+
+    // find city with at least 3 flights
+    else if (choice == 5) {
+      Node* cityNode = newGraph-> find(userCity);
+      cityNode-> reportThreeConnections();
+    }
+
+    else if (choice == 6) {
+      std::cout << "Thanks for using this program. Goodbye!" << std::endl;
+    }
+
+    // kills zero option - if putting 0 this will not work
+    else {
+      std::cout << "Invalid input. Please try again. " << std::endl;
+    }
+
+    // put printouts on looping out
+    // traveling sales being - recursive lookaround, one node asked the next node and stuff gets done
+    // shortest path another one
+    // debug interrupted loop cause rn getting stuck, debug and test a bit more// can alwyas put too long function in braces
+    // can put printouts and put in a list
+    // keep footing correct
+  }
+
+    /*
+  Menu choice;
+  switch(choice) {
+    case LISTOFCITIES:
+      // list cities
+      for (Node* eachCity : newGraph-> getGraphNodes()) {
+        std::cout << "City: " << eachCity-> getName() << std::endl;
+      }
+      break;
+
+    case CITYCONNECTIONS:
+      // prompt user for city name and see all places you can get to from that city
+      std::cout << "Enter city name: " << std::endl;
+      std::cin >> userCity;
+
+      Node* cityNode = newGraph-> find(userCity);
+      cityNode-> report();
+      break;
+
+    case CHEAPESTFLIGHT:
+      break;
+
+    case CITYGRAPH:
+      break;
+
+    case QUIT:
+      break;
+  }
+  */
+};

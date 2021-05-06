@@ -1,48 +1,38 @@
 city SanFrancisco
 city LosAngeles
-flight SanFrancisco LosAngeles
-
 city Dallas
 city Miami
-flight Dallas Miami
-
 city Chicago
 city Denver
-flight Chicago Denver
-
 city Phoenix
 city Champaign
-flight Pheonix Champaign
-
 city Houston
 city Cancun
-flight Houston Cancun
-
 city WashingtonDC
 city NewOrleans
-flight WashingtonDC NewOrleans
-
 city Honolulu
-city Oakland
-flight Honolulu Oakland
-
 city Oakland
 city Anchorage
-flight Oakland Anchorage
-
-city Honolulu
-city LosAngeles
-flight Honolulu LosAngeles
-
 city Tuscon
 city Orlando
-flight Tuscon Orlando
+city London
+city Paris
 
-flight SanFrancisco Miami
-flight Dallas LosAngeles
-flight Pheonix Chicago
-flight WashingtonDC Orlando
-flight Anchorage Houston
-flight Honolulu Oakland
-flight Orlando Chicago
-flight Denver Houston
+flight 125.00 Anchorage Houston
+flight 80.00 Anchorage Oakland
+flight 150.00 Cancun Houston
+flight 100.00 Champaign Phoenix
+flight 160.00 Chicago Denver
+flight 200.00 Chicago Phoenix
+flight 95.00 Chicago Orlando
+flight 80.00 Dallas LosAngeles
+flight 100.00 Dallas Miami
+flight 90.00 Denver Houston
+flight 150.00 Honolulu LosAngeles
+flight 150.00 Honolulu Oakland
+flight 65.00 LosAngeles SanFrancisco 
+flight 170.00 Miami SanFrancisco
+flight 120.00 Orlando Tuscon 
+flight 200.00 NewOrleans WashingtonDC 
+flight 80.00 Orlando WashingtonDC 
+flight 250.00 London Paris
