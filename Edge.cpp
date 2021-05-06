@@ -2,7 +2,7 @@
 #include <iostream>
 
 void Edge::report() {
-  std::cout << "Flight: "<< connection1-> getName() << " and " << connection2-> getName() << " costs: $" << cost << std::endl;
+  std::cout << connection1-> getName() << " to/from " << connection2-> getName() << " is the cheapest flight and costs $" << cost << "." << std::endl;
 
 
 } 

@@ -4,7 +4,7 @@
 void Node::report() {
   Node* nodeptr;
 
-  std::cout << "City: " << name << " connects to: " << std::endl;
+  std::cout << name << " connects to: " << std::endl;
 
   // list all the edges here
   for (Edge* newEdge : edges) {
@@ -15,7 +15,7 @@ void Node::report() {
       nodeptr = newEdge-> getConnection2();
     }
     // print out the node pointers
-    std::cout << nodeptr-> name << std::endl;
+    std::cout << "- " << nodeptr-> name << std::endl;
   }
 
 }
@@ -25,7 +25,7 @@ void Node::reportThreeConnections() {
   
   // connections (edges) of 3+
   if (edges.size() > 2) {
-    std::cout << "City: " << name << " connects to: " << std::endl;
+    std::cout << name << " connects to: " << std::endl;
     // list all the edges here
     for (Edge* newEdge : edges) {
       // if connection 1 is the one I am in, use connection 2
@@ -35,7 +35,7 @@ void Node::reportThreeConnections() {
         nodeptr = newEdge-> getConnection2();
       }
       // print out the node pointers
-      std::cout << nodeptr-> name << std::endl;
+      std::cout << "- " << nodeptr-> name << std::endl;
     }
   }
 }

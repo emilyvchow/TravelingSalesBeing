@@ -22,26 +22,31 @@ enum Menu {
 };
 
 int main() {
+  // create new Graph object to complete menu options
   Graph* newGraph = new Graph();
+
+  // read in Data.txt file
   newGraph-> readIn();
-  newGraph-> report();
 
   std::string userCity;
 
   std::cout << "Welcome to the Traveling Sales Being problem!" << std::endl;
-
-  std::cout << "1 = List of Cities\n2 = City Connections\n3 = Cheapest Flight\n4 = City Graph\n5 = At Least 3 Flights\n 6 = Quit\nEnter your choice: " << std::endl;
 
   int choice = -1;
 
   // menu options
 
   while (choice != 0) {
+    std::cout << std::endl;
     // ask user to input choice
+    std::cout << "MENU:\n1 = List of Cities\n2 = City Connections\n3 = Cheapest Flight\n4 = City Graph\n5 = At Least 3 Flights\n0 = Quit\nEnter your choice: ";
+
     std::cin >> choice;
+    std::cout << std::endl;
 
     // list of city
     if (choice == 1) {
+      std::cout << "OPTION 1: LIST OF CITIES" << std::endl;
       // list cities
       for (Node* eachCity : newGraph-> getGraphNodes()) {
         std::cout << "City: " << eachCity-> getName() << std::endl;
@@ -50,9 +55,11 @@ int main() {
 
     // city connections
     else if (choice == 2) {
+      std::cout << "OPTION 2: CITY CONNECTIONS" << std::endl;
       // prompt user for city name and see all places you can get to from that city
-      std::cout << "Enter city name: " << std::endl;
+      std::cout << "Enter city name: ";
       std::cin >> userCity;
+      std::cout << std::endl;
 
       Node* cityNode = newGraph-> find(userCity);
       cityNode-> report();
@@ -95,21 +102,17 @@ int main() {
       cityNode-> reportThreeConnections();
     }
 
-    else if (choice == 6) {
+    else if (choice == 0) {
       std::cout << "Thanks for using this program. Goodbye!" << std::endl;
     }
 
-    // kills zero option - if putting 0 this will not work
+    // error check
     else {
       std::cout << "Invalid input. Please try again. " << std::endl;
     }
 
-    // put printouts on looping out
     // traveling sales being - recursive lookaround, one node asked the next node and stuff gets done
     // shortest path another one
-    // debug interrupted loop cause rn getting stuck, debug and test a bit more// can alwyas put too long function in braces
-    // can put printouts and put in a list
-    // keep footing correct
   }
 
     /*
