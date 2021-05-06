@@ -36,3 +36,4 @@ flight 120.00 Orlando Tuscon
 flight 200.00 NewOrleans WashingtonDC 
 flight 80.00 Orlando WashingtonDC 
 flight 250.00 London Paris
+flight 100.00 Orlando Honolulu
