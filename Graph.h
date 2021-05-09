@@ -12,6 +12,7 @@ public:
     // default constructor
   }
 
+  // readIn the data for the graph
   void readIn();
 
   std::vector<Node*> getGraphNodes() { return graphNodes; }

@@ -1,0 +1,6 @@
+city e
+city f
+city g
+flight 1 e f 
+flight 2 f g 
+flight 3 e g 

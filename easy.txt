@@ -1,0 +1,10 @@
+city A
+city B
+city C
+city D
+flight 10 A B
+flight 100 B C
+flight 15 C D
+flight 110 D A
+flight 20 C A
+flight 5 B D

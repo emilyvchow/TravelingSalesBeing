@@ -15,9 +15,6 @@ city Oakland
 city Anchorage
 city Tuscon
 city Orlando
-city London
-city Paris
-
 flight 125.00 Anchorage Houston
 flight 80.00 Anchorage Oakland
 flight 150.00 Cancun Houston
@@ -35,5 +32,16 @@ flight 170.00 Miami SanFrancisco
 flight 120.00 Orlando Tuscon 
 flight 200.00 NewOrleans WashingtonDC 
 flight 80.00 Orlando WashingtonDC 
-flight 250.00 London Paris
 flight 100.00 Orlando Honolulu
+flight 137.00 Champaign Chicago
+flight 121.00 Champaign Denver
+flight 149.00 Champaign NewOrleans
+flight 181.00 NewOrleans Houston
+flight 205.00 Phoenix Tuscon
+flight 233.00 Tuscon Dallas
+flight 79.00 Oakland Dallas
+flight 188.00 Miami Cancun
+flight 265.00 WashingtonDC Cancun
+flight 123.00 SanFrancisco Honolulu
+flight 203.00 Oakland Dallas
+flight 299.00 Anchorage Chicago

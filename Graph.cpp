@@ -4,15 +4,18 @@
 #include <sstream>    // stringstream
 #include <vector>
 
+// readIn() opens Data.txt or whicheveer file for readIn input and names object fileInput. readIn() will read in the input and start making city nodes for the graph
 void Graph::readIn() {
-  // open Data.txt for readIn input, name obj fileInput
   std::ifstream fileInput;
-  // hardcode "Data.txt" file name
-  fileInput.open("Data.txt");
+  // allow user to input their own file name
+  std::cout<< "Enter Data Filename: ";
+  std::string filename;
+  std::cin >> filename;
+
+  fileInput.open(filename);
 
   if (fileInput.is_open()) {
     // looping
-    // read outside the loop
     std::string city;
 
     std::string city1;
@@ -36,6 +39,9 @@ void Graph::readIn() {
 
         // Make node and push_back onto list of nodes
         Node* newCity = new Node(city);
+
+        // Debugging purpose
+        // std::cout<< "About to Add " <<city << std::endl;
         graphNodes.push_back(newCity);
       }
       else if (keyword == "flight") {
@@ -66,20 +72,21 @@ void Graph::readIn() {
   }
 }
 
-// Find function (here is std::string name, go through whole list of nodes, see if you can find node that goes with this name) -> not conceptually hard but does take code
+// find() tries to find a node that goes through a whole list of nodes to find a node that matches the  std::string name
 Node* Graph::find(const std::string& selectedCity) {
+  // searching through entire graphNodes() list for the particular city passed in
   for (Node* searchedCity : graphNodes) {
+    // if that city is found
     if (searchedCity-> getName() == selectedCity) {
       return searchedCity;
     }
   }
+  // else, return null pointer for no city found
   return nullptr;
 }
 
+// report() goes through a list of nodes and a list of edges to do their reports
 void Graph::report() {
-  // list of nodes, list of edges
-  // go through all nodes and do their reports
-
   // go through all nodes and do their reports
   for (Node* singleNode : graphNodes) {
     singleNode-> report();
@@ -92,6 +99,7 @@ void Graph::report() {
 
 }
 
+// lowestPrice() will compare Edge pointers in the graph to find the lowest cost, then storing the flight with the lowest cost as a pointer
 Edge* Graph::lowestPrice() {
   double lowestPrice = 5000.00;
   Edge* flightPtr = nullptr;
